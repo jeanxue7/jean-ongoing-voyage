@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jean | The Ongoing Voyage</title>
+    <meta
+      name="description"
+      content="Jean 的个人网站，一段关于生活实验、创作、酒吧与旅居的持续旅程。"
+    />
+    <meta http-equiv="refresh" content="0; url=./prototype/journey-interactions-v1/" />
+    <script>
+      const destination = new URL("./prototype/journey-interactions-v1/", window.location.href);
+      destination.search = window.location.search;
+      destination.hash = window.location.hash || "#scene-opening";
+      window.location.replace(destination.href);
+    </script>
+  </head>
+  <body>
+    <p>
+      正在进入 Jean 的旅程。如果页面没有自动跳转，
+      <a href="./prototype/journey-interactions-v1/#scene-opening">请点击这里</a>。
+    </p>
+  </body>
+</html>
