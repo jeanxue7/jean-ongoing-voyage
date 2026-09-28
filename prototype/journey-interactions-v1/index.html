@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Jean 个人网站 Opening 与 Chapter 01 至 04 的五屏可点击交互原型"
+    />
+    <title>Jean | The Ongoing Voyage Prototype</title>
+    <link rel="stylesheet" href="./styles.css?v=20260928-postscript-lounge" />
+    <script src="./app.js?v=20260928-postscript-lounge-3" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#scene-opening">跳到主要内容</a>
+
+    <header class="site-header" aria-label="章节导航">
+      <a class="site-mark" href="#scene-opening" data-scene-link="scene-opening">
+        <span>JEAN</span>
+        <small>THE ONGOING VOYAGE</small>
+      </a>
+
+      <nav class="journey-nav" aria-label="原型章节">
+        <button class="journey-nav__item is-active" type="button" data-scroll-scene="scene-opening">
+          <span>00</span>
+          <small>Opening</small>
+        </button>
+        <span class="journey-nav__line" aria-hidden="true"></span>
+        <button class="journey-nav__item" type="button" data-scroll-scene="scene-01">
+          <span>01</span>
+          <small>生活实验</small>
+        </button>
+        <span class="journey-nav__line" aria-hidden="true"></span>
+        <button class="journey-nav__item" type="button" data-scroll-scene="scene-02">
+          <span>02</span>
+          <small>创作记录</small>
+        </button>
+        <span class="journey-nav__line" aria-hidden="true"></span>
+        <button class="journey-nav__item" type="button" data-scroll-scene="scene-03">
+          <span>03</span>
+          <small>后话酒吧</small>
+        </button>
+        <span class="journey-nav__line" aria-hidden="true"></span>
+        <button class="journey-nav__item" type="button" data-scroll-scene="scene-04">
+          <span>04</span>
+          <small>旅居地图</small>
+        </button>
+      </nav>
+
+      <button class="sound-toggle" type="button" aria-pressed="false" disabled>
+        <span aria-hidden="true">◌</span>
+        <span class="sound-toggle__label">静音原型</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="scene scene--opening" id="scene-opening" data-scene="opening" aria-labelledby="scene-opening-title">
+        <div class="scene-media" data-video-slot="opening">
+          <img
+            class="scene__image"
+            src="../../design/external-v2/opening-hero-v1.png"
+            alt="Jean 背着蓝色登山包，在金色荒野中向前走并回头看向镜头"
+          />
+          <video
+            class="scene__video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="../../design/external-v2/opening-hero-v1.png"
+            aria-hidden="true"
+            tabindex="-1"
+          >
+            <source data-src="../../design/external-v2/opening-hero-v1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="scene__veil scene__veil--opening" aria-hidden="true"></div>
+
+        <div class="scene-copy scene-copy--opening">
+          <p class="eyebrow">HELLO, I'M JEAN.</p>
+          <h1 id="scene-opening-title">Follow me。</h1>
+          <p class="scene-copy__lead">用真实的经历，打开不同的世界。</p>
+          <button class="primary-action primary-action--sun" type="button" data-scroll-scene="scene-01">
+            开始这段旅程
+            <span aria-hidden="true">→</span>
+          </button>
+          <span class="opening-route" aria-hidden="true"><i></i></span>
+        </div>
+
+        <p class="scene-index" aria-hidden="true">OPENING</p>
+        <button class="next-scene" type="button" data-scroll-scene="scene-01">
+          向下出发
+          <span aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <section class="scene scene--01" id="scene-01" data-scene="01" aria-labelledby="scene-01-title">
+        <div class="scene-media" data-video-slot="chapter-01">
+          <img
+            class="scene__image"
+            src="../../design/external-v2/chapter-01-life-experiments-v1.png"
+            alt="Jean 背着登山包走到高山草坡的分岔路，石堆立在两条路之间"
+          />
+        </div>
+        <div class="scene__veil scene__veil--01" aria-hidden="true"></div>
+
+        <div class="scene-copy scene-copy--01">
+          <p class="eyebrow">01 / LIFE EXPERIMENTS</p>
+          <h2 id="scene-01-title">生活实验</h2>
+          <p class="scene-copy__lead">尝试、选择、走错，再重来。</p>
+          <button
+            class="primary-action primary-action--moss"
+            type="button"
+            data-reveal-life-paths
+            aria-expanded="false"
+            aria-controls="life-path-menu"
+          >
+            走近分岔路
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="fork-route" aria-hidden="true">
+          <span class="fork-route__stem"></span>
+          <span class="fork-route__left"></span>
+          <span class="fork-route__right"></span>
+          <i></i>
+        </div>
+
+        <nav class="life-path-menu" id="life-path-menu" aria-label="选择一条生活轨迹" aria-hidden="true" hidden>
+          <button class="life-path life-path--profile" type="button" data-open-life="profile" aria-controls="life-panel">
+            <span>01 / ABOUT</span>
+            <strong>基础信息</strong>
+            <small>读什么，怎么想</small>
+          </button>
+          <button class="life-path life-path--career" type="button" data-open-life="career" aria-controls="life-panel">
+            <span>02 / WORK</span>
+            <strong>职业路径</strong>
+            <small>几次转弯，三种现场</small>
+          </button>
+          <button class="life-path life-path--interests" type="button" data-open-life="interests" aria-controls="life-panel">
+            <span>03 / OFF DUTY</span>
+            <strong>兴趣爱好</strong>
+            <small>山路、麦克风与键盘</small>
+          </button>
+          <button class="life-path-menu__back" type="button" data-close-life-exploration>← 返回简介</button>
+        </nav>
+
+        <aside class="life-panel" id="life-panel" aria-hidden="true" aria-live="polite" inert>
+          <header class="life-panel__header">
+            <div>
+              <p>MY LIFE, IN THREE PATHS</p>
+              <h3>从哪条路认识我？</h3>
+            </div>
+            <button class="life-panel__close" type="button" data-close-life aria-label="收起生活轨迹">×</button>
+          </header>
+
+          <div class="life-panel__tabs" role="tablist" aria-label="生活轨迹分类">
+            <button id="life-tab-profile" type="button" role="tab" data-life-tab="profile" aria-selected="true" aria-controls="life-view-profile">基础</button>
+            <button id="life-tab-career" type="button" role="tab" data-life-tab="career" aria-selected="false" aria-controls="life-view-career" tabindex="-1">职业</button>
+            <button id="life-tab-interests" type="button" role="tab" data-life-tab="interests" aria-selected="false" aria-controls="life-view-interests" tabindex="-1">兴趣</button>
+          </div>
+
+          <article class="life-view is-active" id="life-view-profile" role="tabpanel" aria-labelledby="life-tab-profile" data-life-view="profile">
+            <p class="life-view__number">PATH 01</p>
+            <h4 tabindex="-1">基础信息</h4>
+            <p class="life-view__lead">hii，这里是金子，也可以叫我 Jean。研三在读，但已经有3年+工作经历...还顺便开了家酒吧，搞了点小项目。</p>
+            <dl class="life-facts">
+              <div>
+                <dt>在哪里</dt>
+                <dd>
+                  <span>中国科学院大学，</span>
+                  <span>但全球可飞</span>
+                </dd>
+              </div>
+              <div>
+                <dt>学什么</dt>
+                <dd>
+                  <span>一个热爱文学艺术的</span>
+                  <span>理科生</span>
+                </dd>
+              </div>
+              <div class="life-fact--wide">
+                <dt>干过什么</dt>
+                <dd>
+                  <span>写过论文，发过一区，爱搞竞赛，打破记录，</span>
+                  <span>环游中国，远渡非洲，爱爬雪山，老玩重装</span>
+                </dd>
+              </div>
+              <div class="life-fact--wide life-fact--mind">
+                <dt>脑回路</dt>
+                <dd>
+                  <span>ENTP，工作时化身J人</span>
+                  <span>一枚风风火火的白羊座</span>
+                </dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="life-view" id="life-view-career" role="tabpanel" aria-labelledby="life-tab-career" data-life-view="career" hidden>
+            <p class="life-view__number">PATH 02</p>
+            <h4 tabindex="-1">职业路径</h4>
+            <p class="life-view__lead">
+              <span>呆过创业公司，也搞过广告业，我在不断换地图，最后回归了互联网。</span>
+              <span>从美团本地、酒旅，到滴滴国际化，再到腾讯微信，题目一直在变，反复做的事是听懂不同人的问题，再把它们翻译成能落地的产品。</span>
+            </p>
+            <ol class="career-trail">
+              <li><span>TENCENT</span><strong>腾讯微信</strong><small>做行业产品和 AI 平台能力。日常是在商户、用户、模型与工程师之间来回翻译，偶尔提醒大家我们说的是同一件事。</small></li>
+              <li><span>MEITUAN</span><strong>美团</strong><small>先做本地业务的销售策略与直播，再到酒旅做 AI 产品和商业分析。算过很多数，不过发现数字不会自动告诉你为什么。</small></li>
+              <li><span>DIDI</span><strong>滴滴国际化</strong><small>把 Storefront 从 0 到 1 带到拉美 4 国。这里学到的第一课，是出海不能只给旧产品换一种语言。</small></li>
+            </ol>
+          </article>
+
+          <article class="life-view" id="life-view-interests" role="tabpanel" aria-labelledby="life-tab-interests" data-life-view="interests" hidden>
+            <p class="life-view__number">PATH 03</p>
+            <h4 tabindex="-1">兴趣爱好</h4>
+            <p class="life-view__lead">离开电脑以后，我通常在徒步、唱歌和写作之间切换。它们分别负责把腿练酸，把嗓子唱坏，最后让我安静地敲一会儿键盘。</p>
+            <div class="interest-lines" aria-label="兴趣爱好">
+              <p><span>HIKE</span><strong>徒步</strong><small>如果我失联，大概率只是进山了～</small></p>
+              <p><span>SING</span><strong>唱歌</strong><small>酒吧驻唱 / 乐队主唱，ktv叫我！！</small></p>
+              <p><span>WRITING</span><strong>写作</strong><small>自娱自乐，自我陶醉，有人看看也不错 ^_^</small></p>
+            </div>
+          </article>
+        </aside>
+
+        <p class="scene-index" aria-hidden="true">01 / 04</p>
+        <button class="next-scene next-scene--dark" type="button" data-scroll-scene="scene-02">
+          下一章
+          <span aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <section class="scene scene--02" id="scene-02" data-scene="02" aria-labelledby="scene-02-title">
+        <div class="scene-media" data-video-slot="chapter-02">
+          <img
+            class="scene__image"
+            src="../../design/external-v2/chapter-02-people-i-met-v3-kept.png"
+            alt="Jean 和两位朋友坐在溪边草甸的帐篷旁做饭聊天"
+          />
+        </div>
+        <div class="scene__veil scene__veil--02" aria-hidden="true"></div>
+
+        <div class="scene-copy scene-copy--02">
+          <p class="eyebrow">CHAPTER 02 · CREATIVE LOGBOOK</p>
+          <h1 id="scene-02-title">创作记录</h1>
+          <button class="primary-action primary-action--paper" type="button" data-start-dialogue>
+            点击朋友开始对话
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <button
+          class="dialogue-tab is-at-friend-a"
+          type="button"
+          data-dialogue-tab
+          aria-label="点击左边的朋友开始对话"
+        >
+          <span class="dialogue-tab__dot" aria-hidden="true"></span>
+          <span class="dialogue-tab__label">点击对话</span>
+        </button>
+
+        <aside class="dialogue-panel" aria-live="polite" aria-hidden="true">
+          <button class="dialogue-panel__close" type="button" data-close-dialogue aria-label="关闭对话">×</button>
+          <p class="dialogue-panel__speaker"></p>
+          <p class="dialogue-panel__line"></p>
+          <p class="dialogue-panel__hint">继续点击场景中的对话 Tab</p>
+        </aside>
+
+        <button class="travel-book-trigger" type="button" data-open-book aria-hidden="true" tabindex="-1">
+          <span class="travel-book-trigger__book" aria-hidden="true"></span>
+          <span>
+            <small>CREATIVE LOGBOOK</small>
+            翻开创作记录
+          </span>
+          <b aria-hidden="true">→</b>
+        </button>
+
+        <p class="scene-index" aria-hidden="true">02 / 04</p>
+        <button class="next-scene" type="button" data-scroll-scene="scene-03">
+          下一章
+          <span aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <section class="scene scene--03" id="scene-03" data-scene="03" aria-labelledby="scene-03-title">
+        <div class="scene-media" data-video-slot="chapter-03">
+          <img
+            class="scene__image"
+            src="../../design/external-v2/chapter-03-how-the-world-works-v3.png"
+            alt="复古酒吧的木桌上放着酒杯、旧书、手写信和信封"
+          />
+        </div>
+        <div class="scene__veil scene__veil--03" aria-hidden="true"></div>
+
+        <div class="scene-copy scene-copy--03">
+          <p class="eyebrow">CHAPTER 03</p>
+          <h2 id="scene-03-title">My Bar,<br />Our Postscript</h2>
+          <p class="scene-copy__cn">我的酒吧，我们的后话</p>
+          <p class="scene-copy__lead">有些故事不必写在开头。喝一杯，我们慢慢说。</p>
+          <button class="primary-action primary-action--outline" type="button" data-open-bar>
+            拿起邀请
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <button class="object-hotspot object-hotspot--letter" type="button" data-open-bar aria-label="拿起桌上的邀请信">
+          <span class="object-hotspot__line" aria-hidden="true"></span>
+          <span class="object-hotspot__label">一封未寄出的信</span>
+        </button>
+
+        <p class="scene-index" aria-hidden="true">03 / 04</p>
+        <button class="next-scene" type="button" data-scroll-scene="scene-04">
+          下一章
+          <span aria-hidden="true">↓</span>
+        </button>
+      </section>
+
+      <section class="scene scene--04" id="scene-04" data-scene="04" aria-labelledby="scene-04-title">
+        <div class="scene-media" data-video-slot="chapter-04">
+          <img
+            class="scene__image"
+            src="../../design/external-v2/chapter-04-places-that-changed-me-v3.png"
+            alt="清晨，Jean 在热气球上俯瞰辽阔的东非草原日出"
+          />
+        </div>
+        <div class="scene__veil scene__veil--04" aria-hidden="true"></div>
+
+        <div class="scene-copy scene-copy--04">
+          <p class="eyebrow">CHAPTER 04</p>
+          <h2 id="scene-04-title">Places That<br />Changed Me</h2>
+          <p class="scene-copy__cn">那些改变我的地方</p>
+          <p class="scene-copy__lead">世界仍在展开，而我也一直在路上。</p>
+          <button class="primary-action primary-action--sunrise" type="button" data-reveal-balloons>
+            放飞地点气球
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <div class="balloon-route" aria-hidden="true">
+          <span></span>
+        </div>
+
+        <div class="balloon-field" aria-label="选择一个地点气球">
+          <button class="place-balloon place-balloon--africa" type="button" data-open-place="east-africa">
+            <span class="place-balloon__shape" aria-hidden="true"></span>
+            <span class="place-balloon__label">East Africa</span>
+          </button>
+          <button class="place-balloon place-balloon--guangzhou" type="button" data-open-place="guangzhou">
+            <span class="place-balloon__shape" aria-hidden="true"></span>
+            <span class="place-balloon__label">Guangzhou</span>
+          </button>
+          <button class="place-balloon place-balloon--beijing" type="button" data-open-place="beijing">
+            <span class="place-balloon__shape" aria-hidden="true"></span>
+            <span class="place-balloon__label">Beijing</span>
+          </button>
+          <button class="place-balloon place-balloon--dali" type="button" data-open-place="dali">
+            <span class="place-balloon__shape" aria-hidden="true"></span>
+            <span class="place-balloon__label">Dali</span>
+          </button>
+        </div>
+
+        <button class="map-shortcut" type="button" data-open-map>
+          展开旅居地图
+          <span aria-hidden="true">⌁</span>
+        </button>
+
+        <p class="scene-index" aria-hidden="true">04 / 04</p>
+        <button class="next-scene next-scene--up" type="button" data-scroll-scene="scene-opening">
+          回到开场
+          <span aria-hidden="true">↑</span>
+        </button>
+
+        <section class="map-layer" aria-hidden="true" aria-labelledby="map-layer-title">
+          <div class="map-layer__header">
+            <div>
+              <p class="eyebrow">JEAN'S LIVING ATLAS</p>
+              <h3 id="map-layer-title">我走过，也被改变过</h3>
+            </div>
+            <button class="close-button close-button--light" type="button" data-close-map aria-label="收起地图">×</button>
+          </div>
+
+          <div class="atlas">
+            <div class="atlas__map" role="group" aria-label="旅居地图，标出东非、广州、北京和大理">
+              <div class="atlas__grid" aria-hidden="true"></div>
+              <div class="continent continent--americas" aria-hidden="true"></div>
+              <div class="continent continent--eurasia" aria-hidden="true"></div>
+              <div class="continent continent--africa" aria-hidden="true"></div>
+              <div class="continent continent--oceania" aria-hidden="true"></div>
+              <svg class="atlas__route" viewBox="0 0 1000 520" aria-hidden="true">
+                <path d="M 590 315 C 690 248, 730 230, 792 205 S 820 164, 805 132" />
+              </svg>
+              <button class="map-node map-node--africa" type="button" data-map-place="east-africa">
+                <span></span>东非
+              </button>
+              <button class="map-node map-node--guangzhou" type="button" data-map-place="guangzhou">
+                <span></span>广州
+              </button>
+              <button class="map-node map-node--beijing" type="button" data-map-place="beijing">
+                <span></span>北京
+              </button>
+              <button class="map-node map-node--dali" type="button" data-map-place="dali">
+                <span></span>大理
+              </button>
+            </div>
+
+            <article class="place-detail" aria-live="polite">
+              <p class="place-detail__counter">04 PLACES UNLOCKED</p>
+              <h4 class="place-detail__title">先点亮一个地点</h4>
+              <p class="place-detail__kicker">地点不是坐标，是生活改变方向的地方。</p>
+              <p class="place-detail__body">选择地图上的光点，查看与它相连的真实记录。</p>
+              <div class="place-detail__gallery" data-place-gallery hidden></div>
+              <div class="place-detail__links"></div>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <dialog class="book-dialog" id="book-dialog" aria-labelledby="book-title">
+      <div class="book-shell">
+        <button class="close-button" type="button" data-close-book aria-label="合上创作记录">×</button>
+
+        <div class="book-cover" data-book-cover>
+          <p class="book-cover__number">02</p>
+          <p class="book-cover__kicker">CREATIVE LOGBOOK</p>
+          <h2 id="book-title">少年 Jean 的<br />奇幻漂流</h2>
+          <p class="book-cover__subtitle">The Ongoing Voyage</p>
+          <button class="book-cover__open" type="button" data-turn-cover>
+            翻开第一页
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="open-book" data-open-book-view hidden>
+          <aside class="book-page book-page--index">
+            <p class="book-page__folio">CONTENTS · 02</p>
+            <h3>我把生活写成<br />一册持续更新的书</h3>
+            <p class="book-page__intro">访谈、年终信、生活札记和行走记录，都从一次真实的相遇开始。</p>
+            <nav class="book-tabs" aria-label="创作记录分类"></nav>
+            <p class="book-page__note">点击文章将在新标签页打开原文。</p>
+          </aside>
+
+          <section class="book-page book-page--stories" aria-live="polite">
+            <div class="book-page__heading">
+              <div>
+                <p class="book-page__folio" data-book-category-en></p>
+                <h3 data-book-category-zh></h3>
+              </div>
+              <span data-book-page-number>01</span>
+            </div>
+            <p class="book-page__description" data-book-category-description></p>
+            <div class="story-list" data-story-list></div>
+            <div class="book-page__turner">
+              <button type="button" data-book-prev>← 上一页</button>
+              <button type="button" data-book-next>下一页 →</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="bar-dialog" id="bar-dialog" aria-label="后话客厅数字客厅">
+      <div class="bar-portal">
+        <header class="bar-portal__header">
+          <button class="bar-back" type="button" data-close-bar>
+            <span aria-hidden="true">←</span>
+            返回旅程
+          </button>
+          <p>MY BAR, OUR POSTSCRIPT</p>
+          <span aria-hidden="true">03</span>
+        </header>
+        <iframe
+          class="bar-portal__frame"
+          data-bar-frame
+          src="./postscript-lounge/?source=jean-portfolio"
+          title="PostScript 后话客厅数字客厅"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </dialog>
+
+    <div class="prototype-note" role="note">
+      <span>INTERACTIVE PROTOTYPE</span>
+      <p>开场主视觉已接入动态影像，01 至 04 可继续点击探索。</p>
+      <button type="button" data-dismiss-note aria-label="关闭原型提示">×</button>
+    </div>
+
+    <noscript>
+      <p class="noscript-message">这个交互原型需要启用 JavaScript 才能体验。</p>
+    </noscript>
+  </body>
+</html>

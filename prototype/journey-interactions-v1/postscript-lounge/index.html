@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const { pathname, search, hash } = window.location;
+        const lastSegment = pathname.split("/").pop();
+        if (lastSegment && !lastSegment.includes(".")) {
+          window.location.replace(`${pathname}/${search}${hash}`);
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#11120e" />
+    <meta
+      name="description"
+      content="后话客厅的线上数字桌面：找到一杯酒、聊到一个问题、带走一句陌生人的后话。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PostScript Digital Lounge｜后话客厅" />
+    <meta
+      property="og:description"
+      content="一杯酒、一个问题、一句话。从自己，到同桌的人，再到一个没有见过的陌生人。"
+    />
+    <meta property="og:image" content="./wine/assets/cover-doodle.jpg" />
+    <title>PostScript Digital Lounge｜后话客厅</title>
+    <link rel="icon" href="./wine/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css?v=20260928-3" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+    <div class="site-shell">
+      <header class="topbar" aria-label="页面顶部">
+        <a class="brand-lockup" href="./" aria-label="PostScript 后话客厅首页" data-context-link>
+          <span class="brand-mark" aria-hidden="true">P.S.</span>
+          <span>
+            <strong>PostScript</strong>
+            <small>后话客厅 · Digital Lounge</small>
+          </span>
+        </a>
+        <span class="edition-label">V0.1 · 店内测试版</span>
+      </header>
+
+      <main id="main-content">
+        <section class="home-hero" aria-labelledby="home-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span>今晚</span><span>你需要什么？</span></p>
+            <h1 id="home-title">P.S.<br />We saved you<br />a drink.</h1>
+            <p class="hero-intro">
+              扫码之后不用注册。先找一杯适合今晚的酒，再聊到一个平时不会问的问题，或者带走一句陌生人的后话。
+            </p>
+          </div>
+
+          <div class="hero-gallery" aria-label="后话客厅现场">
+            <figure class="hero-photo hero-photo-main">
+              <img
+                src="./assets/venue/postscript-bar.jpg"
+                alt="暖色灯光下的后话客厅吧台和一排高脚椅"
+                fetchpriority="high"
+              />
+              <figcaption><span>POSTSCRIPT</span><span>BAR / LOUNGE</span></figcaption>
+            </figure>
+            <figure class="hero-photo hero-photo-corner">
+              <img
+                src="./assets/venue/postscript-corner.jpg"
+                alt="后话客厅深绿色墙面前的酒架、书和藤编灯"
+              />
+            </figure>
+            <figure class="hero-photo hero-photo-night">
+              <img
+                src="./assets/venue/postscript-night.jpg"
+                alt="客人在后话客厅的暖光里跳舞"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="lounge-intro" aria-labelledby="lounge-intro-title">
+          <p class="section-index">ABOUT · 后话客厅</p>
+          <div class="lounge-intro-copy">
+            <h2 id="lounge-intro-title">
+              <span>一间可以把话，</span>
+              <span>慢慢说完的客厅。</span>
+            </h2>
+            <p>
+              “后话”，是当时没说完，后来又想起的话。我们想把酒吧做成一间可以慢慢坐、慢慢喝，也慢慢把话说完的客厅。
+            </p>
+            <p>
+              你可以从一杯适合今晚的酒开始，和同桌聊一个平时不会问的问题，或者给没有见过的陌生人留下一句话。
+            </p>
+          </div>
+          <aside class="lounge-intro-note" aria-label="后话客厅的一句话">
+            <span aria-hidden="true">P.S.</span>
+            <p>不用急着想清楚。<br />先坐一会儿。</p>
+          </aside>
+        </section>
+
+        <section class="module-section" aria-labelledby="module-title">
+          <div class="section-heading">
+            <p class="section-index">01—03</p>
+            <div>
+              <h2 id="module-title">从自己，到同桌的人，<br />再到一个陌生人。</h2>
+              <p>选一条路开始。随时都可以返回这里。</p>
+            </div>
+          </div>
+
+          <div class="module-grid">
+            <a class="module-card module-card-wine" href="./wine/" data-context-link>
+              <span class="module-number">01</span>
+              <div class="module-card-copy">
+                <p class="module-scope">ME · 一杯酒</p>
+                <h3>今晚，<br />喝点什么？</h3>
+                <p>回答五个简单选择，避开忌口，找到真正适合今晚的一杯。</p>
+              </div>
+              <span class="module-cta">帮我选酒 <span aria-hidden="true">↗</span></span>
+            </a>
+
+            <a class="module-card module-card-cards" href="./cards/" data-context-link>
+              <span class="module-number">02</span>
+              <div class="module-card-copy">
+                <p class="module-scope">US · 一个问题</p>
+                <h3>今晚，<br />聊点真的。</h3>
+                <p>3–6 人选关系和深度，轮流说、互相猜，或者做一个小行动。</p>
+              </div>
+              <span class="module-cta">抽一张 <span aria-hidden="true">↗</span></span>
+            </a>
+
+            <a class="module-card module-card-exchange" href="./exchange/" data-context-link>
+              <span class="module-number">03</span>
+              <div class="module-card-copy">
+                <p class="module-scope">OTHERS · 一句话</p>
+                <h3>留下一句，<br />带走一句。</h3>
+                <p>有些话不知道和谁说。写下来，再收到一个陌生人的一句后话。</p>
+              </div>
+              <span class="module-cta">交换后话 <span aria-hidden="true">↗</span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="visit-note" aria-label="匿名访问说明">
+          <p class="visit-note-label">今晚的匿名名字</p>
+          <p class="visit-alias" data-session-alias>正在生成…</p>
+          <p>无需登录。这个名字只保存在当前设备，用来维持今晚的体验。</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <strong>PostScript 后话客厅</strong>
+          <p>一杯酒 / 一个问题 / 一句话</p>
+        </div>
+        <nav aria-label="页脚导航">
+          <a href="./privacy.html" data-context-link>隐私与内容规则</a>
+          <a href="https://postscript-d8g6vuk6p9b031edf-1484580528.tcloudbaseapp.com/">旧版选酒</a>
+        </nav>
+      </footer>
+    </div>
+
+    <noscript>请开启 JavaScript 后使用后话客厅数字桌面。</noscript>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

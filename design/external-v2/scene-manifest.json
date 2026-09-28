@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "confirmedAt": "2026-09-24",
+  "heroScenes": [
+    {
+      "id": "opening",
+      "title": "Opening",
+      "image": "opening-hero-v1.png",
+      "status": "confirmed",
+      "copySafeArea": "left",
+      "motionRole": "ambient-loop"
+    },
+    {
+      "id": "01",
+      "title": "Life Experiments",
+      "image": "chapter-01-life-experiments-v1.png",
+      "status": "confirmed",
+      "copySafeArea": "left-upper",
+      "motionRole": "ambient-loop"
+    },
+    {
+      "id": "02",
+      "title": "People I Met",
+      "image": "chapter-02-people-i-met-v3-kept.png",
+      "status": "confirmed",
+      "copySafeArea": "right-upper",
+      "motionRole": "ambient-loop"
+    },
+    {
+      "id": "03",
+      "title": "How the World Works",
+      "image": "chapter-03-how-the-world-works-v3.png",
+      "status": "confirmed",
+      "copySafeArea": "left",
+      "motionRole": "ambient-loop"
+    },
+    {
+      "id": "04",
+      "title": "Places That Changed Me",
+      "image": "chapter-04-places-that-changed-me-v3.png",
+      "status": "confirmed",
+      "copySafeArea": "left-upper",
+      "motionRole": "featured-motion"
+    }
+  ],
+  "closingSection": {
+    "id": "05",
+    "title": "Current Chapter",
+    "treatment": "minimal-text-section",
+    "heroImageStatus": "not-required-for-v1"
+  }
+}

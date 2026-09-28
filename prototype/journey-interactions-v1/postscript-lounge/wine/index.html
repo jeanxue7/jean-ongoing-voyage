@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (() => {
+        const { pathname, search, hash } = window.location;
+        const lastSegment = pathname.split("/").pop();
+        if (lastSegment && !lastSegment.includes(".")) {
+          window.location.replace(`${pathname}/${search}${hash}`);
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#111210" />
+    <meta
+      name="description"
+      content="后话客厅选酒助手。回答五个简单问题，避开忌口，找到适合今晚的一杯。"
+    />
+    <title>后话客厅｜今晚喝什么</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="后话客厅｜今晚喝什么" />
+    <meta
+      property="og:description"
+      content="不用懂酒。回答 5 个问题，避开忌口，找到适合今晚的一杯。"
+    />
+    <meta property="og:image" content="https://postscript-d8g6vuk6p9b031edf-1484580528.tcloudbaseapp.com/assets/cover-doodle.jpg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./drinks.js"></script>
+    <script defer src="./app.js"></script>
+    <script type="module" src="./bridge.js"></script>
+  </head>
+  <body>
+    <a class="lounge-back-link" href="../" aria-label="返回数字客厅" data-context-link>
+      <span aria-hidden="true">↖</span> 客厅
+    </a>
+    <div id="app"></div>
+    <noscript>请开启 JavaScript 后使用选酒助手。</noscript>
+  </body>
+</html>

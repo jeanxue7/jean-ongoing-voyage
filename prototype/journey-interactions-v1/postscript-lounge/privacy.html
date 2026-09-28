@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#11120e" />
+    <meta name="description" content="后话客厅数字桌面的隐私与内容规则。" />
+    <title>隐私与内容规则｜PostScript 后话客厅</title>
+    <link rel="icon" href="./wine/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css?v=20260928-3" />
+  </head>
+  <body>
+    <a class="skip-link" href="#rules-content">跳到规则正文</a>
+    <div class="module-shell">
+      <header class="module-topbar">
+        <a class="module-back" href="./" data-context-link><span aria-hidden="true">←</span> 数字客厅</a>
+        <span class="module-status">Privacy · Safety</span>
+      </header>
+      <main id="rules-content" class="module-main policy-page">
+        <header class="page-header">
+          <div>
+            <p class="page-kicker">隐私与内容规则</p>
+            <h1>今晚留下的，<br />不等于永远公开。</h1>
+          </div>
+          <p>V0.1 尽量不要求登录，不主动收集真实身份，也不开放陌生人私聊。</p>
+        </header>
+
+        <div class="policy-grid">
+          <section>
+            <span>01</span>
+            <h2>匿名体验</h2>
+            <p>系统会生成匿名凭证和品牌式昵称。留话与领取资格每 12 小时为一轮；为让作者收完临近到期才到达的一层回复，同一凭证可在本机保留最多 36 小时，但超过前 12 小时后只用于收件箱和已领取内容的收尾。扫码来源或桌号变化也会开启新一轮。请不要在后话或回复里留下手机号、微信号、住址等个人信息。</p>
+          </section>
+          <section>
+            <span>02</span>
+            <h2>内容边界</h2>
+            <p>不发布骚扰、威胁、歧视、违法交易、露骨色情或他人隐私。严重或紧急的人身安全问题不适合通过匿名后话处理，请优先联系身边可信任的人或当地紧急服务。</p>
+          </section>
+          <section>
+            <span>03</span>
+            <h2>举报与审核</h2>
+            <p>正式共享模式会提供举报、屏蔽、后台审核和删除能力。新内容先经过审核；审核服务不可用、超时或无法给出明确结论时，内容保持待审，不会进入交换池。被举报、被屏蔽或待审内容也不会继续被领取。</p>
+          </section>
+          <section>
+            <span>04</span>
+            <h2>当前原型</h2>
+            <p>未配置 <code>apiUrl</code> 时，当前开发版本是“本机演示”：示例数据、后话、回复和事件只保存在浏览器 localStorage，不会上传到服务器，也不构成真实陌生人交换。后话与回复会在匿名 session 过期或扫码上下文变化后的下次访问中清理，也可在本页手动清除。</p>
+          </section>
+          <section>
+            <span>05</span>
+            <h2>同店共享</h2>
+            <p>正式共享模式只在同一门店的内容池中交换。门店归属由服务端固定或验证，不能只相信浏览器传入的参数；“同店”仅表示数据边界，不会持续读取 GPS，也不代表按实时地理位置追踪用户。</p>
+          </section>
+          <section>
+            <span>06</span>
+            <h2>12 小时与清理</h2>
+            <p>正式共享模式以服务端收到正文的时间为起点，后话或回复最多可见 12 小时；待审时间也会占用这 12 小时，不会在审核通过后重新计时。到期后内容立即从前台隐藏，正文再延迟 7 天清除。</p>
+          </section>
+          <section>
+            <span>07</span>
+            <h2>一层匿名回复</h2>
+            <p>多位接收者可以各自回复同一条后话一次。回复仅发送给原作者的只读收件箱；作者不能回复这些回复，回复者也不能继续对话。正式共享模式不允许把陌生人的正文导出为分享卡。</p>
+          </section>
+        </div>
+
+        <section class="local-data-actions" aria-labelledby="local-data-title">
+          <div>
+            <p class="page-kicker">当前设备</p>
+            <h2 id="local-data-title">清除本机原型数据</h2>
+            <p>只会移除这台设备上的匿名凭证、抽卡进度、本机演示后话、回复、举报和测试埋点，不影响线上选酒网站；接入正式共享模式后，清除本机凭证也会失去再次查看旧匿名回复的能力，但服务端正文仍按既定期限清理。</p>
+          </div>
+          <button class="button button-secondary" id="clear-local-data" type="button">清除本机数据</button>
+          <p class="local-data-status" data-clear-status aria-live="polite"></p>
+        </section>
+      </main>
+    </div>
+    <script type="module">
+      import { clearLocalData, hydrateContextLinks, trackOnce } from "./shared/core.js";
+      hydrateContextLinks();
+      trackOnce("privacy_view");
+
+      const clearButton = document.querySelector("#clear-local-data");
+      const clearStatus = document.querySelector("[data-clear-status]");
+      clearButton?.addEventListener("click", () => {
+        const confirmed = window.confirm("确认清除这台设备上的后话客厅原型数据？此操作无法撤销。");
+        if (!confirmed) return;
+        const cleared = clearLocalData();
+        clearStatus.textContent = cleared
+          ? "本机原型数据已清除。下次进入会生成新的匿名 session。"
+          : "浏览器阻止了完整清除，请在浏览器的网站数据设置中重试。";
+        if (cleared) clearButton.disabled = true;
+      });
+    </script>
+  </body>
+</html>

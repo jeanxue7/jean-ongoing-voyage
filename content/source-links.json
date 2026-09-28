@@ -1,0 +1,94 @@
+{
+  "account": "少年Jean的奇幻漂流",
+  "podcast": "原野人生",
+  "links": [
+    {
+      "id": "travel-1",
+      "category": "travel",
+      "url": "https://mp.weixin.qq.com/s/xPlNeIfNT8Jkr2L2jPtJ1g",
+      "title": null,
+      "readStatus": "unavailable",
+      "source": "user-provided"
+    },
+    {
+      "id": "travel-2",
+      "category": "travel",
+      "url": "https://mp.weixin.qq.com/s/5qcpYKKFLSiATPPBtBKRXA",
+      "title": "热烈、自由、割裂、混乱……我会用所有词语形容非洲——除了沉闷",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-24",
+      "bodyFile": "content/articles/24_热烈、自由、割裂、混乱……我会用所有词语形容非洲——除了沉闷.md"
+    },
+    {
+      "id": "podcast-1",
+      "category": "podcast",
+      "url": "https://mp.weixin.qq.com/s/QsDsdE31nFwb9f0XJNPpTQ",
+      "title": "裸辞逃离996后，我成了大理农场的「野生私厨」",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-17",
+      "bodyFile": "content/articles/17_裸辞逃离996后，我成了大理农场的「野生私厨」.md"
+    },
+    {
+      "id": "podcast-2",
+      "category": "podcast",
+      "url": "https://mp.weixin.qq.com/s/DZNk0CiCRvIkQHNgCT_Akw",
+      "title": "邀请函｜让我们共同测绘，这个时代的原野人生",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-20",
+      "bodyFile": "content/articles/20_邀请函｜让我们共同测绘，这个时代的原野人生.md"
+    },
+    {
+      "id": "podcast-3",
+      "category": "podcast",
+      "url": "https://mp.weixin.qq.com/s/RgzM3R_FOko_hIIMK9L1Xw",
+      "title": "在互联网大厂的确定性里，做一名即兴的「伪」艺术家",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-12",
+      "bodyFile": "content/articles/12_在互联网大厂的确定性里做一名即兴的伪艺术家.md"
+    },
+    {
+      "id": "annual-1",
+      "category": "annual",
+      "url": "https://mp.weixin.qq.com/s/CqIsvabZLonRFcLf5-0Caw",
+      "title": "二〇二五，我活的依旧真实、热烈、自由和生猛",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-01",
+      "bodyFile": "content/articles/01_二〇二五，我活的依旧真实、热烈、自由和生猛.md"
+    },
+    {
+      "id": "annual-2",
+      "category": "annual",
+      "url": "https://mp.weixin.qq.com/s/1Kqncpeu4C7LHDrlmwdXqA",
+      "title": "我的22岁，我的2024年",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-02",
+      "bodyFile": "content/articles/02_我的22岁，我的2024年.md"
+    },
+    {
+      "id": "hiking-1",
+      "category": "hiking",
+      "url": "https://mp.weixin.qq.com/s/knG7PEXUYcFRdYI3HH1JKw",
+      "title": "垂直启示录 | 比5563米的雪山更高的，是下次再来",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-22",
+      "bodyFile": "content/articles/22_垂直启示录 _ 比5563米的雪山更高的，是下次再来.md"
+    },
+    {
+      "id": "hiking-2",
+      "category": "hiking",
+      "url": "https://mp.weixin.qq.com/s/NrsUxMiIaU9VMCJafgnTfw",
+      "title": "EP 9｜在喜马拉雅行走了百公里，我看见信仰、割裂和乌托邦",
+      "readStatus": "local-markdown-available",
+      "source": "user-provided",
+      "articleId": "article-07",
+      "bodyFile": "content/articles/07_EP 9｜在喜马拉雅行走了百公里，我看见信仰、割裂和乌托邦.md"
+    }
+  ]
+}

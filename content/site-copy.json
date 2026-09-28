@@ -1,0 +1,21 @@
+{
+  "name": "JEAN / 金子",
+  "hero": {
+    "en": "I enter different worlds, try things myself, and figure out how people and systems actually work.",
+    "zh": "用真实的经历，打开不同的世界，并理解人和系统如何真实运转。",
+    "status": "user-provided",
+    "primaryLink": { "label": "Read my stories", "target": "/stories" },
+    "secondaryLink": { "label": "See what I'm doing now", "target": "#now" }
+  },
+  "currentChapter": {
+    "title": "Current Chapter",
+    "text": "一边秋招，一边探索ai，一边开酒吧，并把这些落脚为我的创作",
+    "status": "user-provided",
+    "updatedAt": "2026-09-19"
+  },
+  "account": "少年Jean的奇幻漂流",
+  "podcast": "原野人生",
+  "characterAsset": "assets-originals/avatar/jean-hiker-user-provided.png",
+  "uiStatus": "being-designed-by-user-in-another-tool",
+  "routeStatus": "proposed-not-implemented"
+}
